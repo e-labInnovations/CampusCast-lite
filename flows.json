@@ -1,0 +1,682 @@
+[
+    {
+        "id": "8bc273aec06a019d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "85db573f077ae2bc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "CampusCast",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c43d1462c801bb6b",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "f8a1e55b7bf27a2f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3ce080af1180e0bb",
+        "type": "websocket-listener",
+        "path": "/",
+        "wholemsg": "false"
+    },
+    {
+        "id": "06e5a50a940f010f",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "settings",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0c53484e17462eb5",
+        "type": "ui_group",
+        "name": "Settings 01",
+        "tab": "06e5a50a940f010f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f8a1e55b7bf27a2f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "13b84bb62a644191",
+        "type": "ui_tab",
+        "name": "Announcements",
+        "icon": "fa-bullhorn",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ef4f119db5eaeda5",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "13b84bb62a644191",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "26841b151a2dc880",
+        "type": "ui_microphone",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "group": "c43d1462c801bb6b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "maxLength": "30",
+        "maxRecogLength": 5,
+        "timeslice": 0,
+        "press": "click",
+        "mode": "audio",
+        "interimResults": false,
+        "x": 90,
+        "y": 220,
+        "wires": [
+            [
+                "b8a85b9c0da84133"
+            ]
+        ]
+    },
+    {
+        "id": "b8a85b9c0da84133",
+        "type": "ffmpeg-conversion",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "format": "mp3",
+        "audiochannels": "mono",
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "124fd8352c813c70"
+            ]
+        ]
+    },
+    {
+        "id": "e1beb3b1387eb04d",
+        "type": "debug",
+        "z": "8bc273aec06a019d",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ed54580fa896a566",
+        "type": "file",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 620,
+        "y": 220,
+        "wires": [
+            [
+                "3e84c71f52e05724"
+            ]
+        ]
+    },
+    {
+        "id": "124fd8352c813c70",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "function 1",
+        "func": "function makeid(length) {\n    let result = '';\n    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n    const charactersLength = characters.length;\n    let counter = 0;\n    while (counter < length) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n      counter += 1;\n    }\n    return result;\n}\n\nmsg.filename = `public/announcemets/${makeid(5)}.mp3`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 220,
+        "wires": [
+            [
+                "ed54580fa896a566"
+            ]
+        ]
+    },
+    {
+        "id": "93612884.34d35",
+        "type": "ui_list",
+        "z": "8bc273aec06a019d",
+        "group": "c43d1462c801bb6b",
+        "name": "",
+        "order": 1,
+        "width": "6",
+        "height": "8",
+        "lineType": "three",
+        "actionType": "check",
+        "allowHTML": true,
+        "outputs": 1,
+        "topic": "",
+        "x": 450,
+        "y": 40,
+        "wires": [
+            [
+                "3584e2ee6d27dca7"
+            ]
+        ]
+    },
+    {
+        "id": "ccf3e49f.190be",
+        "type": "inject",
+        "z": "8bc273aec06a019d",
+        "name": "Init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "4f4c565b49a8a7e5",
+                "1e5d6ba79fedbd38"
+            ]
+        ]
+    },
+    {
+        "id": "cd592928.56da38",
+        "type": "debug",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 770,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3584e2ee6d27dca7",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "Save classroom",
+        "func": "let classrooms = global.get('classrooms')\nclassrooms = classrooms.filter(item => item.id != msg.payload.id)\nclassrooms.push(msg.payload)\nglobal.set('classrooms', classrooms)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 40,
+        "wires": [
+            [
+                "cd592928.56da38"
+            ]
+        ]
+    },
+    {
+        "id": "4f4c565b49a8a7e5",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "reload classroom status",
+        "func": "let classrooms = \n// global.get('classrooms')\n// classrooms ? classrooms : \n[\n    {\n      \"title\": \"<b>Class 001</b>\",\n      \"description\": \"Electronics\",\n      \"icon\": \"https://ui-avatars.com/api/?background=random&name=Class%20001\",\n      \"id\": \"class-001\",\n      \"isChecked\": false\n    },\n    {\n        \"title\": \"<b>Class 002</b>\",\n        \"description\": \"Electronics\",\n        \"icon\": \"https://ui-avatars.com/api/?background=random&name=Class%20002\",\n        \"id\": \"class-002\",\n        \"isChecked\": false\n      },\n    {\n        \"title\": \"<b>Class 003</b>\",\n        \"description\": \"Electronics\",\n        \"icon\": \"https://ui-avatars.com/api/?background=random&name=Class%20002\",\n        \"id\": \"class-003\",\n        \"isChecked\": false\n      }\n  ]\nglobal.set('classrooms', classrooms)\nmsg.payload = classrooms\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "93612884.34d35"
+            ]
+        ]
+    },
+    {
+        "id": "12c7a6631206e4a7",
+        "type": "websocket out",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "server": "3ce080af1180e0bb",
+        "client": "",
+        "x": 970,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2a3a43b9c127cd4b",
+        "type": "websocket in",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "server": "3ce080af1180e0bb",
+        "client": "",
+        "x": 70,
+        "y": 320,
+        "wires": [
+            [
+                "60993f23191d6066",
+                "af9b7a938004a1bb",
+                "fcf04fff039a364d"
+            ]
+        ]
+    },
+    {
+        "id": "60993f23191d6066",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "Connected",
+        "func": "let received_msg = JSON.parse(msg.payload)\nif (received_msg.command == 'connected') {\n    msg.payload = {\n        classroom_code: received_msg.classroom_code,\n        websocket_id: msg._session.id\n    }\n\n    let classrooms = global.get('classrooms')\n    let classroom = classrooms.find(cr => cr.id == received_msg.classroom_code)\n    classrooms = classrooms.filter(cr => cr.id == received_msg.classroom_code)\n    classrooms.push(classroom)\n    global.set('classrooms', classrooms)\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 320,
+        "wires": [
+            [
+                "e7ddd430a4574237"
+            ]
+        ]
+    },
+    {
+        "id": "e7ddd430a4574237",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "Update Devices",
+        "func": "msg.payload = {\n    command: 'connected_ack',\n    introURL: 'https://firebasestorage.googleapis.com/v0/b/campuscast-elabins.appspot.com/o/intro.mp3?alt=media&token=756fe61f-8d57-453b-be03-23db5cbedf18',\n    outroURL: 'https://firebasestorage.googleapis.com/v0/b/campuscast-elabins.appspot.com/o/outro.mp3?alt=media&token=75b04d5d-ecdf-4eea-9d87-a7aae01ebc4e'\n}\nnode.send(msg);",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "12c7a6631206e4a7"
+            ]
+        ],
+        "outputLabels": [
+            "1"
+        ]
+    },
+    {
+        "id": "af9b7a938004a1bb",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "ACK",
+        "func": "let received_msg = JSON.parse(msg.payload)\nif (received_msg.command == 'ack') {\n    msg.payload = {\n        classroom_code: received_msg.classroom_code,\n        // websocket_id: msg._session.id\n        msg_id: received_msg.msg_id\n    }\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcf04fff039a364d",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "ACK RECE",
+        "func": "let received_msg = JSON.parse(msg.payload)\nif (received_msg.command == 'ack_received') {\n    msg.payload = {\n        classroom_code: received_msg.classroom_code,\n        // websocket_id: msg._session.id\n        msg_id: received_msg.msg_id\n    }\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e84c71f52e05724",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "Send WS Message",
+        "func": "let classrooms = global.get('classrooms')\nlet id = msg.filename.replace('public/announcemets/', '').replace('.mp3', '')\nlet audioUrl = global.get('baseUrl') + msg.filename.replace('public/', '')\nclassrooms.forEach(classroom => {\n    const ws_msg = {\n        command: 'anncmnt',\n        audioUrl: audioUrl,\n        id: id,\n        recipient: classroom.id\n    }\n    if (classroom.isChecked) {\n        node.send({\n            payload: ws_msg,\n            _session: {\n                id: classroom.websocketId\n            }\n        });\n    }\n});\n// node.warn(msg.payload.recipients);\n// return msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "e1beb3b1387eb04d",
+                "12c7a6631206e4a7",
+                "5ea0946a8d3b7970"
+            ]
+        ]
+    },
+    {
+        "id": "b653e21e142fb87d",
+        "type": "ui_text_input",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "label": "Base URL",
+        "tooltip": "",
+        "group": "0c53484e17462eb5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 410,
+        "y": 100,
+        "wires": [
+            [
+                "28164c75ef375f65"
+            ]
+        ]
+    },
+    {
+        "id": "1e5d6ba79fedbd38",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "IP",
+        "func": "function getBaseIPURL() {\n  var interfaces = global.get('os').networkInterfaces();\n  for (var devName in interfaces) {\n    var iface = interfaces[devName];\n\n    for (var i = 0; i < iface.length; i++) {\n      var alias = iface[i];\n      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)\n        return `http://${alias.address}:1880/`;\n    }\n  }\n  return 'http://0.0.0.0:1880/';\n}\n\nmsg.payload = global.get('baseUrl') || getBaseIPURL()\nglobal.set('baseUrl', msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "b653e21e142fb87d"
+            ]
+        ]
+    },
+    {
+        "id": "28164c75ef375f65",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "Save baseUrl",
+        "func": "function getBaseIPURL() {\n  var interfaces = global.get('os').networkInterfaces();\n  for (var devName in interfaces) {\n    var iface = interfaces[devName];\n\n    for (var i = 0; i < iface.length; i++) {\n      var alias = iface[i];\n      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)\n        return `http://${alias.address}:1880/`;\n    }\n  }\n  return 'http://0.0.0.0:1880/';\n}\n\nmsg.payload = msg.payload == 'reset' ? getBaseIPURL() : msg.payload\nglobal.set('baseUrl', msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 100,
+        "wires": [
+            [
+                "b653e21e142fb87d"
+            ]
+        ]
+    },
+    {
+        "id": "10a444a4b992e77d",
+        "type": "ui_button",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "group": "0c53484e17462eb5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset to Local IP",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "refresh",
+        "payload": "reset",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "28164c75ef375f65"
+            ]
+        ]
+    },
+    {
+        "id": "5ea0946a8d3b7970",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "save anncmnts",
+        "func": "let anncmnts = global.get('anncmnts') || []\nlet audio = msg.payload.audioUrl.split('/')\naudio.shift()\naudio.shift()\naudio.shift()\naudio = audio.join('/')\nanncmnts.push({\n    audio : audio,\n    classroom: msg.payload.recipient,\n    id: msg.payload.id,\n})\nglobal.set('anncmnts', anncmnts)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1545c0d3ec5df0c8",
+        "type": "ui_ui_control",
+        "z": "8bc273aec06a019d",
+        "name": "",
+        "events": "change",
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "ea0b3afa4ec09eee"
+            ]
+        ]
+    },
+    {
+        "id": "0cc50e7183494813",
+        "type": "debug",
+        "z": "8bc273aec06a019d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ea0b3afa4ec09eee",
+        "type": "function",
+        "z": "8bc273aec06a019d",
+        "name": "function 2",
+        "func": "let classrooms = global.get('classrooms')\nif(msg.payload == 'change' && msg.name == 'Announcements') {\n    let anncmnts = global.get('anncmnts') || []\n    anncmnts = anncmnts.map(anncmnt => {\n        let classroom = classrooms.find(cs => cs.id == anncmnt.classroom) || {}\n        let audioUrl = global.get('baseUrl') + anncmnt.audio\n        return {\n            title: classroom.title + ' - ' + anncmnt.id,\n            description: `<audio controls src=\"${audioUrl}\"></audio>`,\n            icon: 'https://cdn-icons-png.flaticon.com/128/945/945174.png'\n        }\n    })\n    msg.payload = anncmnts\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 480,
+        "wires": [
+            [
+                "f9527648ab3f9f61",
+                "0cc50e7183494813"
+            ]
+        ]
+    },
+    {
+        "id": "f9527648ab3f9f61",
+        "type": "ui_list",
+        "z": "8bc273aec06a019d",
+        "group": "ef4f119db5eaeda5",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "lineType": "three",
+        "actionType": "none",
+        "allowHTML": true,
+        "outputs": 0,
+        "topic": "",
+        "x": 430,
+        "y": 480,
+        "wires": []
+    }
+]

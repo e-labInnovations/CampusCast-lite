@@ -1,0 +1,26 @@
+{
+    "classrooms": [
+        {
+            "title": "<b>Class 001</b>",
+            "description": "Electronics",
+            "icon": "https://ui-avatars.com/api/?background=random&name=Class%20001",
+            "id": "class-001",
+            "isChecked": false
+        },
+        {
+            "title": "<b>Class 002</b>",
+            "description": "Electronics",
+            "icon": "https://ui-avatars.com/api/?background=random&name=Class%20002",
+            "id": "class-002",
+            "isChecked": false
+        },
+        {
+            "title": "<b>Class 003</b>",
+            "description": "Electronics",
+            "icon": "https://ui-avatars.com/api/?background=random&name=Class%20002",
+            "id": "class-003",
+            "isChecked": false
+        }
+    ],
+    "baseUrl": "http://192.168.137.1:1880/"
+}
