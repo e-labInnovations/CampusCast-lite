@@ -212,7 +212,7 @@
         "id": "e1beb3b1387eb04d",
         "type": "debug",
         "z": "8bc273aec06a019d",
-        "name": "debug 2",
+        "name": "MSG To ESP32",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -221,7 +221,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
+        "x": 1000,
         "y": 180,
         "wires": []
     },
@@ -394,7 +394,8 @@
             [
                 "60993f23191d6066",
                 "af9b7a938004a1bb",
-                "fcf04fff039a364d"
+                "fcf04fff039a364d",
+                "7ee732498ce05702"
             ]
         ]
     },
@@ -403,7 +404,7 @@
         "type": "function",
         "z": "8bc273aec06a019d",
         "name": "Connected",
-        "func": "let received_msg = JSON.parse(msg.payload)\nif (received_msg.command == 'connected') {\n    msg.payload = {\n        classroom_code: received_msg.classroom_code,\n        websocket_id: msg._session.id\n    }\n\n    let classrooms = global.get('classrooms')\n    let classroom = classrooms.find(cr => cr.id == received_msg.classroom_code)\n    classrooms = classrooms.filter(cr => cr.id == received_msg.classroom_code)\n    classrooms.push(classroom)\n    global.set('classrooms', classrooms)\n    return msg;\n}",
+        "func": "let received_msg = JSON.parse(msg.payload)\nif (received_msg.command == 'connected') {\n    msg.payload = {\n        classroom_code: received_msg.classroom_code,\n        websocket_id: msg._session.id\n    }\n\n    let classrooms = global.get('classrooms')\n    let classroom = classrooms.find(cr => cr.id == received_msg.classroom_code)\n    classrooms = classrooms.filter(cr => cr.id == received_msg.classroom_code)\n    classroom.websocket_id = msg.payload.websocket_id\n    classrooms.push(classroom)\n    global.set('classrooms', classrooms)\n    return msg;\n}",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -677,6 +678,23 @@
         "topic": "",
         "x": 430,
         "y": 480,
+        "wires": []
+    },
+    {
+        "id": "7ee732498ce05702",
+        "type": "debug",
+        "z": "8bc273aec06a019d",
+        "name": "MSG From ESP32",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 250,
+        "y": 400,
         "wires": []
     }
 ]
